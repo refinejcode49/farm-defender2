@@ -8,25 +8,35 @@
 </head>
 <body>
     <main>
-        <div class="game-start-screen">
+        <div id="game-start-screen">
             <div class="game-intro">
                 <h2>FARM DEFENDER</h2>
                 <p>Welcome, young farmer !
                     A perilous night awaits you. Monsters threaten your precious farm. Your mission: Survive 15 seconds and protect your crops! Use the arrows to control your character. 🌱 Collect as much bonuses starfruit-image & coffee-bean-image as you can. 🏃 Avoid the falling monsters. ⏱️ Resist for 15 seconds</p>
-                <button>Start Game</button>
+                <button id="start-button">Start Game</button>
             </div>
         </div>
-        <div class="game-screen-lvl-1">
-            <div class="game-container">
-                <p>Score: <span>0</span></p>
-                <p>Lives: <span>3</span></p>
-                <p>Remaining time: <span>15</span></p>
-            </div>
+        <div id="game-screen-lvl-1">
+            <p>Score: <span>0</span></p>
+            <p>Lives: <span>3</span></p>
+            <p>Remaining time: <span>15</span></p>
+                <div id="game-container">
+                </div>
         </div>
-        <div class="game-end">
+        <div id="game-level-up-screen">
+            <h1>Congratulations !</h1>
+            <p>You protected your farm.</p>
+            <p>Score </p>
+            <p>Lives remaining </p>
+            <button>Next level</button>
+        </div>
+        <div id="game-end">
             <h1>Game Over</h1>
             <button>Restart Game</button>
         </div>
     </main>
+    <script type="text/javascript" src="/js/player.js"></script>
+    <script type="text/javascript" src="/js/game.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
