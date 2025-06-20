@@ -15,7 +15,7 @@ class Game {
     );
     this.height = 600;
     this.width = 500;
-    this.obstacles = [];
+    this.monster = [new Monster(this.gameLevelOneScreen)];
     this.score = 0;
     this.lives = 3;
     this.gameOver = false;
@@ -36,7 +36,7 @@ class Game {
     }, this.gameLoopFrequency);
   }
   gameLoop() {
-    console.log("game loop");
+    //console.log("game loop");
     this.update();
     //check if the game is over
     if (this.gameOver) {
@@ -45,5 +45,19 @@ class Game {
   }
   update() {
     this.player.move();
+    for (let i = 0; i < this.monster.length; i++) {
+      const currentMonster = this.monster[i];
+      currentMonster.move();
+    }
+
+    //check if the monster passes the player
+    if (currentMonster.top > 620) {
+      //add a point
+      this.score++;
+      // cut the monster out of array
+      this.monster.splice(i, 1);
+      // remove the img element from the html
+      currentMonster.element.remove();
+    }
   }
 }
