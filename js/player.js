@@ -49,5 +49,20 @@ class Player {
     this.element.style.top = `${this.positionTop}px`;
     this.element.style.left = `${this.positionLeft}px`;
   }
-  didCollide(obstacle) {}
+
+  didCollide(monster) {
+    const playerRect = this.element.getBoundingClientRect();
+    const monsterRect = monster.element.getBoundingClientRect();
+
+    if (
+      playerRect.left < monsterRect.right &&
+      playerRect.right > monsterRect.left &&
+      playerRect.top < monsterRect.bottom &&
+      playerRect.bottom > monsterRect.top
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

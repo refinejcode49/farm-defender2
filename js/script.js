@@ -10,6 +10,20 @@ window.onload = function () {
     startGame();
   });
 
+  restartButtonElement.addEventListener("click", () => {
+    //refresh the page to start again
+    window.location.reload();
+    //hide the game over screen
+    //myNewGame.gameOverScreen.style.display = "none";
+    //remove the image of the player from the first game
+    //myNewGame.player.element.remove();
+    //show the game screen
+    //myNewGame.gameLevelOneScreen.style.display = "block";
+    // this reassign the myNewGame variable
+    //myNewGame = new Game();
+    //myNewGame.start();
+  });
+
   // keyboard event listeners
   window.addEventListener("keydown", (event) => {
     //if the key up is pressed, the direction Y is moving up, down, left and right
@@ -39,7 +53,7 @@ window.onload = function () {
 
   //all the functions here
   function startGame() {
-    console.log("start game");
+    //console.log("start game");
     myNewGame.start();
   }
 };
