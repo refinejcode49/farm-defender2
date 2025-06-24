@@ -1,5 +1,5 @@
 class Monster {
-  constructor(gameLevelOneScreen) {
+  constructor(gameScreen) {
     this.possibleXPositions = [80, 270];
     this.randomIndex = Math.floor(
       Math.random() * this.possibleXPositions.length
@@ -15,7 +15,7 @@ class Monster {
     this.element.style.left = `${this.left}px`;
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
-    gameLevelOneScreen.appendChild(this.element);
+    gameScreen.appendChild(this.element);
   }
   move() {
     this.top += 3;

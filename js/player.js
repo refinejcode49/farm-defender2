@@ -1,13 +1,13 @@
 class Player {
   constructor(
-    gameLevelOneScreen,
+    gameScreen,
     positionLeft,
     positionTop,
     playerWidth,
     playerHeight,
     playerImageSrc
   ) {
-    this.gameLevelOneScreen = gameLevelOneScreen;
+    this.gameScreen = gameScreen;
     this.positionLeft = positionLeft;
     this.positionTop = positionTop;
     this.width = playerWidth;
@@ -22,7 +22,7 @@ class Player {
     this.element.style.width = `${playerWidth}px`;
     this.element.style.height = `${playerHeight}px`;
     //after creating the img element and setting the properties, adding the img to the page
-    gameLevelOneScreen.appendChild(this.element);
+    gameScreen.appendChild(this.element);
   }
 
   move() {

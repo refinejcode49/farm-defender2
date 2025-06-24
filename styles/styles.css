@@ -17,7 +17,11 @@
   }
 }
 
-#game-screen-lvl-1 {
+#game-stats {
+  display: none;
+}
+
+#game-win {
     display: none;
 }
 
@@ -28,3 +32,4 @@
 #game-end {
     display: none;
 }
+

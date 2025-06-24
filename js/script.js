@@ -18,7 +18,7 @@ window.onload = function () {
     //remove the image of the player from the first game
     //myNewGame.player.element.remove();
     //show the game screen
-    //myNewGame.gameLevelOneScreen.style.display = "block";
+    //myNewGame.gameScreen.style.display = "block";
     // this reassign the myNewGame variable
     //myNewGame = new Game();
     //myNewGame.start();
