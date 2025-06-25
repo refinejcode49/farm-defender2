@@ -1,6 +1,7 @@
 window.onload = function () {
   const startButtonElement = document.getElementById("start-button");
   const restartButtonElement = document.getElementById("restart-button");
+  const nextLevelButtonElement = document.getElementById("next-lvl-btn");
   let myNewGame;
 
   // all the event listeners here
@@ -22,6 +23,32 @@ window.onload = function () {
     // this reassign the myNewGame variable
     //myNewGame = new Game();
     //myNewGame.start();
+  });
+
+  // start the next level when the player win
+  nextLevelButtonElement.addEventListener("click", () => {
+    //hide the win screen
+    myNewGame.gameWinScreen.style.display = "none";
+    // next level increase
+    myNewGame.currentLevel++;
+
+    //set different values for lives and timer for level 2/3
+    if (myNewGame.currentLevel === 2) {
+      myNewGame.lives = 3;
+      myNewGame.timer = 10;
+    } else if (myNewGame.currentLevel === 3) {
+      myNewGame.lives = 4;
+      myNewGame.timer = 20;
+    }
+
+    // reset score, lives and timer
+    myNewGame.score = 0;
+    myNewGame.scoreElement.innerText = myNewGame.score;
+    myNewGame.livesElement.innerText = myNewGame.lives;
+    myNewGame.timerElement.innerText = myNewGame.timer;
+    //show game screen
+    myNewGame.gameScreen.style.display = "block";
+    myNewGame.start();
   });
 
   // keyboard event listeners

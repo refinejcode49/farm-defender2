@@ -23,7 +23,7 @@ class Game {
     this.monster = [new Monster(this.gameScreen)];
     this.score = 0;
     this.lives = 3;
-    this.timer = 20;
+    this.timer = 10;
     this.gameIsOver = false;
     this.gameIntervalId = null;
     this.gameLoopFrequency = Math.round(1000 / 60); // 60 fps = 60 times per second
@@ -56,12 +56,19 @@ class Game {
   gameLoop() {
     //console.log("game loop");
     this.counter++;
-    if (this.counter % 180 === 0) {
-      this.monster.push(new Monster(this.gameScreen));
+    if (this.currentLevel === 1) {
+      this.level1();
+    }
+    if (this.currentLevel === 2) {
+      this.level2();
+    }
+    if (this.currentLevel === 3) {
+      this.level3();
     }
     this.update();
     //check if the game is over
     if (this.gameIsOver) {
+      clearInterval(this.playerInterval);
       this.gameOver();
     }
   }
@@ -98,7 +105,25 @@ class Game {
   }
 
   level1() {
-    
+    console.log(`level n°${this.currentLevel}`);
+    if (this.counter % 180 === 0) {
+      this.monster.push(new Monster(this.gameScreen));
+    }
+  }
+
+  level2() {
+    console.log(`level n°${this.currentLevel}`);
+    if (this.counter % 260 === 0) {
+      this.monster.push(new Monster(this.gameScreen));
+    }
+  }
+
+  level3() {
+    console.log(`level n°${this.currentLevel}`);
+    if (this.counter % 380 === 0) {
+      const randomY = Math.floor(Math.random() * 400);
+      this.monster.push(new Monster(this.gameScreen, 0, randomY, "horizontal"));
+    }
   }
 
   victoryEndGame() {
