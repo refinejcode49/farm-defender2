@@ -28,14 +28,19 @@
         </div>
         <div id="game-win">
             <h1>Congratulations !</h1>
-            <p>You protected your farm.</p>
-            <p>Score </p>
-            <p>Lives remaining </p>
+            <p>You passed this level and protected your farm !</p>
+            <p>Score: <span id="score">0</span></p>
+            <p>Lives: <span id="lives">3</span></p>
             <button id="next-lvl-btn">Next level</button>
         </div>
-        <div id="game-end">
+        <div id="game-over">
             <h1>Game Over</h1>
-            <button id="restart-button">Restart Game</button>
+            <button id="restart-btn-over">Restart Game</button>
+        </div>
+        <div id="game-end">
+            <h1>Congratulations !</h1>
+            <p>You survived the night and protected your farm !</p>
+            <button id="restart-btn-end">Restart Game</button>
         </div>
     </main>
     <script type="text/javascript" src="/js/monster.js"></script>

@@ -1,7 +1,11 @@
 #game-container{
     display: none;
     align-content: center;
-    background-image: url("/assets/grass.png");
+    border: 2px solid #0a4d90;
+    width: 800px;
+    height: 700px;
+    background-image: url("../assets/grass.png");
+    background-size: cover;
     animation: slide 5s linear infinite;
 }
 
@@ -26,6 +30,10 @@
 }
 
 #game-level-up-screen {
+    display: none;
+}
+
+#game-over {
     display: none;
 }
 

@@ -1,6 +1,8 @@
 window.onload = function () {
   const startButtonElement = document.getElementById("start-button");
-  const restartButtonElement = document.getElementById("restart-button");
+  const restartButtonElement = document.getElementById("restart-btn-over");
+  const restartGameEndButtonElement =
+    document.getElementById("restart-btn-end");
   const nextLevelButtonElement = document.getElementById("next-lvl-btn");
   let myNewGame;
 
@@ -25,8 +27,35 @@ window.onload = function () {
     //myNewGame.start();
   });
 
+  restartGameEndButtonElement.addEventListener("click", () => {
+    //refresh the page to start again
+    window.location.reload();
+    //hide the game over screen
+    //myNewGame.gameOverScreen.style.display = "none";
+    //remove the image of the player from the first game
+    //myNewGame.player.element.remove();
+    //show the game screen
+    //myNewGame.gameScreen.style.display = "block";
+    // this reassign the myNewGame variable
+    //myNewGame = new Game();
+    //myNewGame.start();
+  });
+
   // start the next level when the player win
   nextLevelButtonElement.addEventListener("click", () => {
+    // stop the loop from running for the game and player
+    clearInterval(myNewGame.gameIntervalId);
+    clearInterval(myNewGame.playerInterval);
+
+    // Remove all monster elements from the DOM
+    myNewGame.monster.forEach((monster) => {
+      if (monster.element) {
+        monster.element.remove();
+      }
+    });
+
+    // Clear the monster array
+    myNewGame.monster = [];
     //hide the win screen
     myNewGame.gameWinScreen.style.display = "none";
     // next level increase

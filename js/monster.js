@@ -1,18 +1,23 @@
 class Monster {
-  constructor(gameScreen, left, top, directionX) {
-    this.possibleXPositions = [700, 450, 111, 622, 27, 44];
-    this.possibleYPositions = [-100, -110, -120];
-    this.randomXIndex = Math.floor(
-      Math.random() * this.possibleXPositions.length
-    );
-    this.randomYIndex = Math.floor(
-      Math.random() * this.possibleYPositions.length
-    );
-    this.left = this.possibleXPositions[this.randomXIndex];
-    this.top = this.possibleYPositions[this.randomYIndex];
-    this.directionX = directionX;
+  constructor(gameScreen, direction) {
+    this.direction = direction;
     this.width = 125;
     this.height = 180;
+    if (this.direction === "vertical") {
+      this.possibleXPositions = [600, 750, 450, 111, 27, 44];
+      this.randomXIndex = Math.floor(
+        Math.random() * this.possibleXPositions.length
+      );
+      this.left = this.possibleXPositions[this.randomXIndex];
+      this.top = 130;
+    } else if (this.direction === "horizontal") {
+      this.possibleYPositions = [130, 150, 250, 350, 450, 600];
+      this.randomYIndex = Math.floor(
+        Math.random() * this.possibleYPositions.length
+      );
+      this.top = this.possibleYPositions[this.randomYIndex];
+      this.left = -100;
+    }
     this.element = document.createElement("img");
     this.element.src = "../assets/SDV_Sandy.png";
     this.element.style.position = "absolute";
@@ -23,7 +28,7 @@ class Monster {
     gameScreen.appendChild(this.element);
   }
   move() {
-    if (this.directionX === "horizontal") {
+    if (this.direction === "horizontal") {
       this.left += 4;
     } else {
       this.top += 4;
