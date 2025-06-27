@@ -21,7 +21,7 @@ window.onload = function () {
     //remove the image of the player from the first game
     //myNewGame.player.element.remove();
     //show the game screen
-    //myNewGame.gameScreen.style.display = "block";
+    //myNewGame.gameScreen.style.display = "block"";
     // this reassign the myNewGame variable
     //myNewGame = new Game();
     //myNewGame.start();
@@ -35,7 +35,7 @@ window.onload = function () {
     //remove the image of the player from the first game
     //myNewGame.player.element.remove();
     //show the game screen
-    //myNewGame.gameScreen.style.display = "block";
+    //myNewGame.gameScreen.style.display = "block"";
     // this reassign the myNewGame variable
     //myNewGame = new Game();
     //myNewGame.start();

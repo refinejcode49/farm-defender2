@@ -42,7 +42,7 @@ class Game {
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
     this.gameContainerScreen.style.display = "block";
-    this.statsScreen.style.display = "block";
+    this.statsScreen.style.display = "flex";
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrequency);
@@ -142,7 +142,7 @@ class Game {
     //cache le game screen
     this.gameScreen.style.display = "none";
     // montre le victory screen
-    this.gameWinScreen.style.display = "block";
+    this.gameWinScreen.style.display = "flex";
     //for the audio win
     //this.victory.play();
     //pour les highscores

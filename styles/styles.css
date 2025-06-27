@@ -1,10 +1,56 @@
+ body {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #0a4d90;  /*à changer*/
+  }
+  
+  
+  #game-start-screen, #game-screen{
+    display: flex;
+  }
+
+
+  .game-intro {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 9px solid black;  /*à changer*/
+    border-radius: 32px;
+    padding-bottom: 15px;
+    margin-top: 80px;
+  }
+
+  .game-intro h1 {
+    font-size: 80px;
+    color: #047734;  /*à changer*/
+    text-shadow: 12px 12px 14px rgba(0,0,0,0.5); /*à changer*/
+    padding: 20px;
+  }
+
+  .mission-list {
+  text-decoration: none;
+  list-style-type: none;
+  }
+
+  #start-button {
+  background-color: orange;  /*à changer*/
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
+  }
+
 #game-container{
     display: none;
     align-content: center;
-    border: 2px solid #0a4d90;
+    border: 9px #0a4d90;  /*à changer*/
+    border-style: dotted solid; /*à changer*/
+    border-radius: 64px;
     width: 800px;
     height: 700px;
-    background-image: url("../assets/grass.png");
+    background-image: url("../assets/grass.png");  /*à changer*/
     background-size: cover;
     animation: slide 5s linear infinite;
 }
@@ -21,12 +67,31 @@
   }
 }
 
+
 #game-stats {
   display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 5px solid black;  /*à changer*/
+  margin: 50px;
 }
 
 #game-win {
     display: none;
+    border: 5px solid black;  /*à changer*/
+    padding: 20px;
+    text-align: center;
+    flex-direction: column;
+    /*justify-content: center;
+    align-items: center;*/
+    margin: 50px;
+}
+
+#game-win button {
+  background-color: orange;  /*à changer*/
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
 }
 
 #game-level-up-screen {
@@ -35,9 +100,30 @@
 
 #game-over {
     display: none;
+    border: 5px solid black;  /*à changer*/
+    margin: 50px;
+    padding-bottom: 10px;
 }
+
+#game-over button {
+  background-color: orange;  /*à changer*/
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
+}
+
 
 #game-end {
     display: none;
+    display: none;
+    border: 5px solid black;  /*à changer*/
+    margin: 50px;
+    padding-bottom: 10px;
 }
 
+#game-end button {
+  background-color: orange;  /*à changer*/
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
+}

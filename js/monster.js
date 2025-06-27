@@ -19,7 +19,7 @@ class Monster {
       this.left = -100;
     }
     this.element = document.createElement("img");
-    this.element.src = "../assets/SDV_Sandy.png";
+    this.element.src = "../assets/cute_venom.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
