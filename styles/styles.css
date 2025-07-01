@@ -1,15 +1,35 @@
+ .press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .fredoka-custom {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 87.5;
+  }
+
+  .cabin-custom {
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+ 
+  
  body {
     text-align: center;
     margin: 0 auto;
     background-color: #0a4d90;  /*à changer*/
+    background-image: url(../assets/SDV_background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
-  
-  #game-start-screen, #game-screen{
-    display: flex;
-  }
-
-
   .game-intro {
     display: flex;
     text-align: center;
@@ -17,32 +37,83 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    border: 9px solid black;  /*à changer*/
     border-radius: 32px;
     padding-bottom: 15px;
     margin-top: 80px;
+    background: linear-gradient(45deg, #047734, #0a4d90);
+    border-radius: 32px;
+    border: 9px solid transparent;  /*à changer*/
+    animation: borderColorChange 3s linear infinite;
   }
-
+  
+  @keyframes borderColorChange {
+    0%   { border-color: #0a4d90; }
+    50%  { border-color: #047734; }
+    100% { border-color: #0a4d90; }
+  }
+  
   .game-intro h1 {
-    font-size: 80px;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 72px;
     color: #047734;  /*à changer*/
     text-shadow: 12px 12px 14px rgba(0,0,0,0.5); /*à changer*/
     padding: 20px;
   }
 
+   .game-intro h2 {
+    font-family: 'Fredoka';
+    font-size: 40px;
+    color: white;
+  }
+
+  .game-intro p {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: white;
+  }
+  
   .mission-list {
-  text-decoration: none;
-  list-style-type: none;
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
   }
-
+  
   #start-button {
-  background-color: orange;  /*à changer*/
-  border: none;
-  border-radius: 16px;
-  padding: 10px;
+    font-family: 'Fredoka', system-ui;
+    background-color: #e89d06;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #game-start-screen, #game-screen{
+    display: flex;
+  }
+  
+  #game-stats {
+    display: none;
+    /*when display is in flex*/
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Cabin', sans-serif;
+    font-size: 30px;
+    margin-left: 180px;
+    margin-bottom: 16px;
+    color: white;
   }
 
-#game-container{
+  #game-container{
     display: none;
     align-content: center;
     border: 9px #0a4d90;  /*à changer*/
@@ -50,6 +121,11 @@
     border-radius: 64px;
     width: 800px;
     height: 700px;
+    margin: 0 auto; 
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-image: url("../assets/grass.png");  /*à changer*/
     background-size: cover;
     animation: slide 5s linear infinite;
@@ -68,13 +144,6 @@
 }
 
 
-#game-stats {
-  display: none;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 5px solid black;  /*à changer*/
-  margin: 50px;
-}
 
 #game-win {
     display: none;
