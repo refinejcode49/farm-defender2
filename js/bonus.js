@@ -1,8 +1,8 @@
 class Bonus {
   constructor(gameScreen) {
     this.possibleImages = [
-      "assets/SDV_Cauliflower.png",
-      "assets/SDV_Sandy.png",
+      "./assets/SDV_Cauliflower.png",
+      "./assets/SDV_Sandy.png",
     ];
     this.possibleXPositions = [450, 270, 100, 50, 80, 44, 111, 700];
     this.randomIndex = Math.floor(
