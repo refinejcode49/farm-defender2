@@ -19,7 +19,7 @@ class Monster {
       this.left = 130; // the msonter start to spawn at the beginning of the #game-container
     }
     this.element = document.createElement("img");
-    this.element.src = "../assets/cute_venom.png";
+    this.element.src = "assets/cute_venom.png";
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
