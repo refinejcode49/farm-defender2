@@ -17,7 +17,7 @@ class Game {
       400,
       125,
       150,
-      "../assets/cute_venom.png"
+      "assets/cute_venom.png"
     );
     this.height = 700;
     this.width = 800;
