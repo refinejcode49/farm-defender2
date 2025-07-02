@@ -143,56 +143,149 @@
   }
 }
 
-
-
 #game-win {
     display: none;
-    border: 5px solid black;  /*à changer*/
+    background: linear-gradient(45deg, #047734, #0a4d90);
+    border: 9px solid #0a4d90;  /*à changer*/
+    border-radius: 72px;
     padding: 20px;
+    width: 80%; 
+    height: auto;
+    margin: 0 auto; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     text-align: center;
     flex-direction: column;
-    /*justify-content: center;
-    align-items: center;*/
-    margin: 50px;
+    justify-content: center;
+    align-items: center;
+    animation: borderColorChange 3s linear infinite;
+  }
+  
+  @keyframes borderColorChange {
+    0%   { border-color: #0a4d90; }
+    50%  { border-color: #047734; }
+    100% { border-color: #0a4d90; }
+  }     
+
+#game-win h1 {
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 48px;
+  color: #047734; /*à changer*/
+}
+
+#game-win p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  color: white;
 }
 
 #game-win button {
-  background-color: orange;  /*à changer*/
+  background-color: #e89d06;  /*à changer*/
+ font-family: 'Fredoka', system-ui;
+  color: white;
   border: none;
-  border-radius: 16px;
-  padding: 10px;
-}
-
-#game-level-up-screen {
-    display: none;
+  padding: 8px 16px;
+  font-size: 40px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 #game-over {
     display: none;
-    border: 5px solid black;  /*à changer*/
-    margin: 50px;
-    padding-bottom: 10px;
+    background: linear-gradient(45deg, #047734, #0a4d90);
+    border: 9px solid #0a4d90;  /*à changer*/
+    border-radius: 72px;
+    padding: 20px;
+    width: 80%; 
+    height: auto;
+    margin: 0 auto; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: borderColorChange 3s linear infinite;
 }
 
+@keyframes borderColorChange {
+    0%   { border-color: #0a4d90; }
+    50%  { border-color: #047734; }
+    100% { border-color: #0a4d90; }
+} 
+
+#game-over h1 {
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 48px;
+  color: rgb(194, 4, 4); /*à changer*/
+}
+
+#game-over p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  color: white;
+}
 #game-over button {
-  background-color: orange;  /*à changer*/
-  border: none;
-  border-radius: 16px;
-  padding: 10px;
+  font-family: 'Fredoka', system-ui;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 40px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 
 #game-end {
     display: none;
-    display: none;
-    border: 5px solid black;  /*à changer*/
-    margin: 50px;
-    padding-bottom: 10px;
+    background: linear-gradient(45deg, #047734, #0a4d90);
+    border: 9px solid #0a4d90;  /*à changer*/
+    border-radius: 72px;
+    padding: 20px;
+    width: 80%; 
+    height: auto;
+    margin: 0 auto; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: borderColorChange 3s linear infinite;
+}
+
+@keyframes borderColorChange {
+    0%   { border-color: #0a4d90; }
+    50%  { border-color: #047734; }
+    100% { border-color: #0a4d90; }
+} 
+
+#game-end h1 {
+  font-family: 'Press Start 2P', system-ui;
+  font-size: 48px;
+  color: #047734; /*à changer*/
+}
+
+#game-end p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  color: white;
 }
 
 #game-end button {
-  background-color: orange;  /*à changer*/
+  background-color: #e89d06;  /*à changer*/
+  font-family: 'Fredoka', system-ui;
+  color: white;
   border: none;
-  border-radius: 16px;
-  padding: 10px;
+  padding: 8px 16px;
+  font-size: 40px;
+  border-radius: 20px;
+  cursor: pointer;
 }

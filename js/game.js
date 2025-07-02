@@ -23,6 +23,7 @@ class Game {
     this.width = 800;
     this.currentLevel = 1;
     this.monster = []; // empty to avoid a fix monster on level1 because no direction is specified at start if with a new class === the monster are created by the level methods and have direction
+    this.bonus = [];
     this.score = 0;
     this.lives = 3;
     this.timer = 10;
@@ -113,27 +114,65 @@ class Game {
         currentMonster.element.remove();
       }
     }
+
+    //this is for the bonus
+    for (let i = 0; i < this.bonus.length; i++) {
+      const currentBonus = this.bonus[i];
+
+      //currentGoodObstacle.move(); GoodObstacle static on the gamescreen
+      //check if the bonus is colliding with the player
+      if (this.player.didCollide(currentBonus)) {
+        //remove the red car from the array in JS
+        this.bonus.splice(i, 1);
+        i--;
+        //dont forget to remove the img element from the html
+        currentBonus.element.remove();
+        this.score = this.score + 5;
+        this.scoreElement.innerText = this.score;
+      }
+
+      if (currentBonus.top > 620) {
+        // remove the bonus if the player did not touch it
+        this.bonus.splice(i, 1);
+        i--;
+        currentBonus.element.remove();
+      }
+    }
   }
 
   level1() {
     console.log(`level n°${this.currentLevel}`);
     if (this.counter % 180 === 0) {
-      this.monster.push(new Monster(this.gameScreen, "vertical"));
+      for (let i = 0; i < 2; i++) {
+        // Spawn 2 monsters vertically
+        this.monster.push(new Monster(this.gameScreen, "vertical"));
+      }
     }
   }
 
   level2() {
     console.log(`level n°${this.currentLevel}`);
     if (this.counter % 260 === 0) {
-      this.monster.push(new Monster(this.gameScreen, "horizontal"));
+      for (let i = 0; i < 2; i++) {
+        // Spawn 2 monsters horizontal
+        this.monster.push(new Monster(this.gameScreen, "horizontal"));
+      }
+      if (this.counter % 100 === 0) {
+        this.bonus.push(new Bonus(this.gameScreen));
+      }
     }
   }
 
   level3() {
     console.log(`level n°${this.currentLevel}`);
     if (this.counter % 120 === 0) {
-      const randomDirection = Math.random() < 0.5 ? "vertical" : "horizontal";
-      this.monster.push(new Monster(this.gameScreen, randomDirection));
+      for (let i = 0; i < 3; i++) {
+        const randomDirection = Math.random() < 0.5 ? "vertical" : "horizontal";
+        this.monster.push(new Monster(this.gameScreen, randomDirection));
+      }
+      if (this.counter % 100 === 0) {
+        this.bonus.push(new Bonus(this.gameScreen));
+      }
     }
   }
 

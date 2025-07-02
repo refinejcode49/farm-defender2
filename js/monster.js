@@ -4,19 +4,19 @@ class Monster {
     this.width = 125;
     this.height = 180;
     if (this.direction === "vertical") {
-      this.possibleXPositions = [600, 750, 450, 111, 27, 44];
+      this.possibleXPositions = [140, 950, 600, 250, 300, 500, 750, 450];
       this.randomXIndex = Math.floor(
         Math.random() * this.possibleXPositions.length
       );
       this.left = this.possibleXPositions[this.randomXIndex];
       this.top = 130;
     } else if (this.direction === "horizontal") {
-      this.possibleYPositions = [130, 150, 250, 350, 450, 600];
+      this.possibleYPositions = [140, 200, 350, 500, 600, 700, 250, 750];
       this.randomYIndex = Math.floor(
         Math.random() * this.possibleYPositions.length
       );
       this.top = this.possibleYPositions[this.randomYIndex];
-      this.left = -100;
+      this.left = 130; // the msonter start to spawn at the beginning of the #game-container
     }
     this.element = document.createElement("img");
     this.element.src = "../assets/cute_venom.png";
@@ -27,6 +27,7 @@ class Monster {
     this.element.style.height = `${this.height}px`;
     gameScreen.appendChild(this.element);
   }
+
   move() {
     if (this.direction === "horizontal") {
       this.left += 4;

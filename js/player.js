@@ -29,18 +29,18 @@ class Player {
     this.positionLeft += this.directionX;
     this.positionTop += this.directionY;
     // not letting the player go left or right off the screen
-    if (this.positionLeft < 10) {
-      this.positionLeft = 10;
+    if (this.positionLeft < 130) {
+      this.positionLeft = 130;
     }
-    if (this.positionLeft + this.width > 795) {
-      this.positionLeft = 795 - this.width;
+    if (this.positionLeft + this.width > 970) {
+      this.positionLeft = 970 - this.width;
     }
     // not letting the player go up or down off the screen
     if (this.positionTop < 130) {
       this.positionTop = 130;
     }
-    if (this.positionTop + this.height > 820) {
-      this.positionTop = 820 - this.height;
+    if (this.positionTop + this.height > 800) {
+      this.positionTop = 800 - this.height;
     }
     this.updatePosition();
     //console.log("inside the player move method");
